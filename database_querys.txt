@@ -1,0 +1,28 @@
+CREATE DATABASE cinema;
+
+CREATE TABLE `movies` (
+  `movie_id` int(11),
+  `name` varchar(40) NOT NULL,
+  `language` varchar(40) NOT NULL,
+  `year_of_release` int(4) DEFAULT NULL,
+  PRIMARY KEY (`movie_id`)
+)
+
+insert into movies values(1001,'Bahubali','Telugu',2017);
+insert into movies values(1002,'mimi','Hindi',2021);
+insert into movies values(1003,'soorarai pottru','Tamil',2020);
+
+
+CREATE TABLE `cast` (
+  `movie_id` int(11),
+  `actor` varchar(40) NOT NULL,
+  `actress` varchar(40) NOT NULL,
+  `director` varchar(40) NOT NULL,
+   FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
+);
+
+insert into cast values(1001,'Prabhas','Anushka/Tamanna', 'Rajamouli');
+insert into cast values(1002,'Pankaj Tripathi','Kriti Sanon','Laxman Utekar');
+insert into cast values(1003,'Surya','Aparna Balamurali','Sudha Kongara');
+
+
